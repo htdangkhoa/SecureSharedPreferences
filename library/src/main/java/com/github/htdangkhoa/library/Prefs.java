@@ -275,7 +275,7 @@ public class Prefs {
      * @param aClass
      * @param defaultValue
      * */
-    public static List<?> getListObject(@NonNull String key, @NonNull Class<?> aClass, List<?> defaultValue) {
+    public static List<Object> getListObject(@NonNull String key, @NonNull Class<?> aClass, List<Object> defaultValue) {
         Gson gson = new Gson();
         List<String> strings = getListString(key);
         List<Object> objects = new ArrayList<Object>();
