@@ -15,7 +15,7 @@ allprojects {
 Add the dependency:
 ```gradle
 dependencies {
-        compile 'com.github.htdangkhoa:SecureSharedPreferences:1.1.0'
+	compile 'com.github.htdangkhoa:SecureSharedPreferences:1.1.0'
 }
 ```
 
@@ -25,7 +25,7 @@ dependencies {
 * Initialize secure shared preferences.
 **/
 new Prefs()
-    .setContext(this)
+	.setContext(this)
     .setPassword("password")
     .setFilename("example_filename")
     .build();
@@ -56,6 +56,6 @@ List<CustomObject> list = (List<CustomObject>)(List<?>) new ArrayList<>(objects)
 ## XML using Secure Shared Preferences
 ```xml
 <map>
-    <string name="ssvYPxb3mE+ebytZKoRIuMqrwn0kIFasENYlY/P6Muw=">uij9OxpVOB+N9mvLketIjQ==:dfYsnMagXw4DDeqmA2EnXocPJu8nsVp9WP2Zj0k+JUc=:XjVBOMAViOv4WEZme2+bbw==</string>
+	<string name="ssvYPxb3mE+ebytZKoRIuMqrwn0kIFasENYlY/P6Muw=">uij9OxpVOB+N9mvLketIjQ==:dfYsnMagXw4DDeqmA2EnXocPJu8nsVp9WP2Zj0k+JUc=:XjVBOMAViOv4WEZme2+bbw==</string>
 </map>
 ```
