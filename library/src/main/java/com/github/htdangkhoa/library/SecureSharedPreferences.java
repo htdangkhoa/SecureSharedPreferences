@@ -19,7 +19,7 @@ import java.util.Set;
  * Created by dangkhoa on 2/1/18.
  */
 
-public class Prefs {
+public class SecureSharedPreferences {
     private static SecurePreferences securePreferences;
     private static SharedPreferences sharedPreferences;
     private static Context context;
@@ -33,7 +33,7 @@ public class Prefs {
      * Set context.
      * @param context
      * */
-    public Prefs setContext(Context context) {
+    public SecureSharedPreferences setContext(Context context) {
         this.context = context;
         return this;
     }
@@ -42,7 +42,7 @@ public class Prefs {
      * Set password.
      * @param password
      * */
-    public Prefs setPassword(String password) {
+    public SecureSharedPreferences setPassword(String password) {
         this.password = password;
         return this;
     }
@@ -51,7 +51,7 @@ public class Prefs {
      * Set file name.
      * @param filename
      * */
-    public Prefs setFilename(String filename) {
+    public SecureSharedPreferences setFilename(String filename) {
         this.filename = filename;
         return this;
     }
@@ -59,7 +59,7 @@ public class Prefs {
     /**
      * Build.
      * */
-    public Prefs build() {
+    public SecureSharedPreferences build() {
         if (context == null) throw new RuntimeException("Context is being null, please call `setContext(Context)` before.");
 
         if (password != null) {
@@ -347,26 +347,26 @@ public class Prefs {
 
     /**
      * Register on prefs change listener.
-     * @param prefsListener
+     * @param secureSharedPreferencesListener
      * */
-    public static void registerOnPrefsChangeListener(@NonNull final PrefsListener prefsListener) {
+    public static void registerOnPrefsChangeListener(@NonNull final SecureSharedPreferencesListener secureSharedPreferencesListener) {
         sharedPreferences.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                prefsListener.onPrefsChanged(sharedPreferences, key);
+                secureSharedPreferencesListener.onPrefsChanged(sharedPreferences, key);
             }
         });
     }
 
     /**
      * Unregister on prefs change listener.
-     * @param prefsListener
+     * @param secureSharedPreferencesListener
      * */
-    public static void unregisterOnPrefsChangeListener(@NonNull final PrefsListener prefsListener) {
+    public static void unregisterOnPrefsChangeListener(@NonNull final SecureSharedPreferencesListener secureSharedPreferencesListener) {
         sharedPreferences.unregisterOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                prefsListener.onPrefsChanged(sharedPreferences, key);
+                secureSharedPreferencesListener.onPrefsChanged(sharedPreferences, key);
             }
         });
     }
