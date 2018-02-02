@@ -25,7 +25,7 @@ dependencies {
 * Initialize secure shared preferences.
 **/
 new Prefs()
-	.setContext(this)
+    .setContext(this)
     .setPassword("password")
     .setFilename("example_filename")
     .build();
