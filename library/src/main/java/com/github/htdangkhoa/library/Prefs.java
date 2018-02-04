@@ -327,7 +327,9 @@ public class Prefs {
      * Clear
      * */
     public static void clear() {
-        getEditor(sharedPreferences).clear().apply();
+        securePreferences.edit().clear().apply();
+        sharedPreferences.edit().clear().apply();
+        sharedPreferences = securePreferences;
     }
 
     /**
